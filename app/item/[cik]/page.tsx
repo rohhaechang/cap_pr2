@@ -18,9 +18,9 @@ export default async function ProductDetails({
   return (
     <main>
       <Link href="/">Main</Link>
-      <div>
-        <h1>{jsonData.name}</h1>
-        <p>company cik: { jsonData.company_cik}</p>
+      <div style={{paddingBottom: "24px"}}>
+        <h1 style={{paddingTop: "12px"}}>{jsonData.name}</h1>
+        <p  style={{paddingTop: "12px"}}>company cik: { jsonData.company_cik}</p>
       </div>
       {Object.entries(item_8).map(([key, value]) => <Table key={randomInt(500)} name={key} params={value}></Table>)}
     </main>

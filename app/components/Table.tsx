@@ -13,7 +13,7 @@ export default function Table({ params, name}: TableProps) {
     return (
         <details style={{ marginTop: "20px"}}>
             <LineChart name={name} params={params}></LineChart>
-            <summary style={{cursor: "pointer",}}>{name}</summary>
+            <summary style={{cursor: "pointer", fontSize: "24px"}}>{name}</summary>
             <table className={styles.table}>
             <thead>
                 <tr>
@@ -34,9 +34,9 @@ export default function Table({ params, name}: TableProps) {
                 ))}
             </tbody>
         </table>
-        
+
         </details>
-        
+
     );
 }
 

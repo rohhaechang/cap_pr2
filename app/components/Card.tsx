@@ -13,8 +13,8 @@ export default function Card({params}: {params: {name: string, cik: string, rece
       {params.name} <span>-&gt;</span>
     </h2>
     <p>
-      Company cik: {params.cik}
-      recent_filing_year: {params.recent_year}
+      <p>Company cik: {params.cik}</p>
+      <p>recent_filing_year: {params.recent_year}</p>
     </p>
   </Link>
   )
