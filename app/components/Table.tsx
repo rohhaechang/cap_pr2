@@ -12,7 +12,7 @@ export default function Table({ params, name}: TableProps) {
 
     return (
         <div>
-            <p>{name}</p>
+            <p style={{color: "black"}}>{name}</p>
             <LineChart name={name} params={params}></LineChart>
 
             <table className={styles.table}>
