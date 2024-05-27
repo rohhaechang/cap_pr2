@@ -44,7 +44,7 @@ export default function LineChart({params, name}: Props) {
   const label1 = Object.keys(params)
   const data1 = label1.map(item => params[item]).map(val => Object.values(val))
 
-  
+
   const data2: any = label1.map((label, index) => ({
     label: label,
     data: data1[index].map(value => parseFloat(value)),
@@ -86,8 +86,9 @@ export default function LineChart({params, name}: Props) {
   };
 
   return (
-    <div style={{display: "flex", justifyContent: "center", alignContent: "center"}}>
-      
+    <div style={{ cursor: "pointer",}}>
+      <p style={{alignContent: "center",}}><span>{name}</span></p>
+      <div style={{display: "flex", justifyContent: "center", alignContent: "center"}}>
       <div style={{ width: 660, height: 300 }}>
         <Line options={{
                   responsive: true,
@@ -109,5 +110,7 @@ export default function LineChart({params, name}: Props) {
               }} data={data3} />
       </div>
     </div>
+    </div>
+
   );
 };

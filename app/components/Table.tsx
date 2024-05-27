@@ -11,9 +11,10 @@ export default function Table({ params, name}: TableProps) {
     const years = Object.keys(params[Object.keys(params)[0]]);
 
     return (
-        <details style={{ marginTop: "20px"}}>
+        <div>
+            <p>{name}</p>
             <LineChart name={name} params={params}></LineChart>
-            <summary style={{cursor: "pointer", fontSize: "24px"}}>{name}</summary>
+
             <table className={styles.table}>
             <thead>
                 <tr>
@@ -35,7 +36,7 @@ export default function Table({ params, name}: TableProps) {
             </tbody>
         </table>
 
-        </details>
+        </div>
 
     );
 }

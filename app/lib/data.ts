@@ -2,7 +2,7 @@ import { createPool } from '@vercel/postgres';
 
 export async function fetchData() {
   const pool = createPool({
-    connectionString: process.env.capstone_postgresql_URL
+    connectionString: "postgres://default:Dn7JI9jOUGyV@ep-yellow-brook-a4fzyued-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"
   })
 
   const data = await pool.sql`
@@ -15,7 +15,7 @@ export async function fetchData() {
 
 export async function fetchDataByCik(cik: string) {
   const pool = createPool({
-    connectionString: process.env.capstone_postgresql_URL
+    connectionString: "postgres://default:Dn7JI9jOUGyV@ep-yellow-brook-a4fzyued-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"
   })
 
   const data = await pool.sql`
@@ -25,3 +25,7 @@ export async function fetchDataByCik(cik: string) {
   `
   return data
 }
+
+// query 최신순 group by company_cik, having year
+// langchain 짜기
+// 프론트 디자인
