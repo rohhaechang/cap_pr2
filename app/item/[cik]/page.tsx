@@ -55,7 +55,7 @@ export default function ProductDetails({ params }: { params: { cik: string } }) 
       </div>
       <div style={{paddingLeft: "12px"}}>
         <p style={{ fontSize: "24px", paddingBottom: "12px", paddingTop: "12px" }}>Property</p>
-        <p>Apple's headquarters is in Cupertino, California, with owned or leased facilities and land for corporate functions, R&D, data centers, retail, and other purposes across the U.S. and internationally, all in good operating condition.</p>
+        <p>Apple&apos;s headquarters is in Cupertino, California, with owned or leased facilities and land for corporate functions, R&D, data centers, retail, and other purposes across the U.S. and internationally, all in good operating condition.</p>
       </div>
       <div style={{paddingLeft: "12px"}}>
         <p style={{ fontSize: "24px", paddingBottom: "12px", paddingTop: "12px" }}>Market for Registrant’s Common Equity</p>
