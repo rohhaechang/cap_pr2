@@ -19,7 +19,7 @@ export async function fetchDataByCik(cik: string) {
   })
 
   const data = await pool.sql`
-  SELECT company_cik, name, year, item_1, item_8
+  SELECT company_cik, name, year, item_1, item_1a, item_2, item_3, item_5, item_7, item_7a, item_8, summary
   from table1
   where company_cik=${cik} and year=2023
   `

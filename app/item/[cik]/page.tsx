@@ -7,6 +7,8 @@ import Link from "next/link";
 import ReactModal from "react-modal";
 import { randomInt } from "crypto";
 import LineChart from "@/app/components/LineChart";
+import ItemsT from "@/app/components/itemsT";
+import Summary from "@/app/components/Summary";
 
 export default function ProductDetails({ params }: { params: { cik: string } }) {
   const [data, setData] = useState<any>(null);
@@ -45,22 +47,14 @@ export default function ProductDetails({ params }: { params: { cik: string } }) 
         <h1 style={{paddingTop: "12px", paddingLeft: "12px"}}>{data.name}</h1>
         <p style={{paddingTop: "12px", paddingLeft: "12px"}}>company cik: {data.company_cik}</p>
       </div>
-      <div style={{paddingLeft: "12px"}}>
-        <p style={{ fontSize: "24px", paddingBottom: "12px", paddingTop: "12px" }}>Company Overview</p>
-        <p>Apple Inc. designs, manufactures, and markets a wide range of hardware products, services, and digital content, facing intense competition and supply chain challenges while emphasizing innovation, inclusivity, and workplace safety.</p>
-      </div>
-      <div style={{paddingLeft: "12px"}}>
-        <p style={{ fontSize: "24px", paddingBottom: "12px", paddingTop: "12px" }}>Risk Factor</p>
-        <p>Key risk factors for AAPL include exposure to macroeconomic conditions, global supply chain disruptions, intense competition, legal and regulatory compliance challenges, financial risks related to foreign exchange rates and credit, and stock price volatility.</p>
-      </div>
-      <div style={{paddingLeft: "12px"}}>
-        <p style={{ fontSize: "24px", paddingBottom: "12px", paddingTop: "12px" }}>Property</p>
-        <p>Apple&apos;s headquarters is in Cupertino, California, with owned or leased facilities and land for corporate functions, R&D, data centers, retail, and other purposes across the U.S. and internationally, all in good operating condition.</p>
-      </div>
-      <div style={{paddingLeft: "12px"}}>
-        <p style={{ fontSize: "24px", paddingBottom: "12px", paddingTop: "12px" }}>Market for Registrant’s Common Equity</p>
-        <p>Apple Inc. has 23,763 shareholders of record as of October 20, 2023, with a total of 106,595 shares repurchased during the three months ended September 30, 2023, under a $90 billion share repurchase program, including new accelerated share repurchase agreements, reflecting a strong market presence and strategic capital allocation.</p>
-      </div>
+      <Summary params={data.summary}></Summary>
+      <ItemsT name="Company Overview" params={data.item_1}></ItemsT>
+      <ItemsT name="Risk Factor" params={data.item_1a}></ItemsT>
+      <ItemsT name="Property" params={data.item_2}></ItemsT>
+      <ItemsT name="Legal Proceedings" params={data.item_3}></ItemsT>
+      <ItemsT name="Market for Registrant's Common Equity" params={data.item_5}></ItemsT>
+      <ItemsT name="Management’s Discussion and Analysis of Financial Condition and Results of Operations" params={data.item_7}></ItemsT>
+      <ItemsT name="Quantitative and Qualitative Disclosures About Market Risk" params={data.item_7a}></ItemsT>
       <div style={{ height: "48px", paddingLeft: "12px", paddingTop: "12px", fontSize: "18px", fontWeight: "bold"}}>tables and charts</div>
       <div style={{ padding: "12px 12px 12px 12px", display: "grid", gridTemplateColumns: "repeat(3, minmax(33%, auto))" }}>
         {Object.entries(item_8).map(([key, value]) => (
