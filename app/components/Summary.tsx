@@ -3,14 +3,29 @@ interface SumProps {
 }
 
 export default function Summary({ params }: SumProps) {
-  const json_data = JSON.parse(params)
+  const safeParseJSON = (jsonString: string) => {
+    try {
+      return JSON.parse(jsonString);
+    } catch (error) {
+      console.error("Error parsing JSON:", error);
+      return jsonString;
+    }
+  };
+
+  const item = safeParseJSON(params)
+  console.log(item)
   return (
     <div>
-      {json_data['evaluation']
+      {item['evaluation']
         ? <div style={{ paddingLeft: "12px" }}>
-            <p style={{ fontSize: "24px", paddingBottom: "12px", paddingTop: "12px" }}>Summary</p>
-            <p style={{textDecoration: "underline"}}><b>{json_data['evaluation']}</b></p>
-            <p>{json_data['cause']}</p>
+          <p style={{ fontSize: "24px", paddingBottom: "12px", paddingTop: "12px" }}>Summary</p>
+          {item['evaluation']
+            ? <p style={{ textDecoration: "underline" }}><b>{item['evaluation']}</b></p>
+            : <p style={{textDecoration: "underline"}}><b>{item}</b></p>}
+
+            {item['cause']
+            ? <p>{item['cause']}</p>
+            : <p>{item}</p>}
           </div>
         : <div></div>}
     </div>

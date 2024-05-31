@@ -14,10 +14,12 @@ export default function Error({
 
   return (
     <div>
-      <h2>라우팅 에러</h2>
-      <button onClick={() => reset()}>
-        재시도하기
+      <center>
+        <h2>데이터 가져오기 실패</h2>
+        <button onClick={() => reset()}>
+          재시도하기
       </button>
+      </center>
     </div>
   )
 }
